@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyMate AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h2>StudyMate AI</h2>
+
+      <a href="#" class="nav-link active" data-page="dashboard">Dashboard</a>
+      <a href="#" class="nav-link" data-page="notes">Notes</a>
+      <a href="#" class="nav-link" data-page="quiz">Quiz</a>
+      <a href="#" class="nav-link" data-page="subjects">Subjects</a>
+      <a href="#" class="nav-link" data-page="progress">Progress</a>
+      <div class="sidebar-credit">
+  Designed by<br />
+  <strong>Abhishek Yadav</strong>
+</div>
+    </aside>
+
+    <main class="main">
+     <section class="page active-page" id="dashboard">
+  <div class="dashboard">
+    <p class="tag">Smart Study Mode</p>
+    <h1>StudyMate AI</h1>
+    <h3>For school, college, PG and self-learning students.</h3>
+
+    <p>
+      Apna class/course add karo, subjects manage karo, notes summarize karo,
+      quiz practice karo aur weekly roadmap banao.
+    </p>
+
+    <div class="dashboard-grid">
+      <div class="course-box">
+        <h3>Current Course</h3>
+        <p id="courseName">No course selected</p>
+
+        <input
+          type="text"
+          id="courseInput"
+          placeholder="Example: Class 12, BCA, MCA, BA History, NEET"
+        />
+
+        <button id="saveCourseBtn">Save Course</button>
+      </div>
+
+      <div class="stats-box">
+        <h3>Study Snapshot</h3>
+
+        <div class="stat-row">
+          <span>Total Subjects</span>
+          <strong id="totalSubjects">0</strong>
+        </div>
+
+        <div class="stat-row">
+          <span>Study Status</span>
+          <strong id="studyStatus">Getting Started</strong>
+        </div>
+
+        <div class="stat-row">
+          <span>Today Goal</span>
+          <strong>1 topic + 1 quiz</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <button class="quick-btn" data-open="notes">Add Notes</button>
+      <button class="quick-btn" data-open="quiz">Start Quiz</button>
+      <button class="quick-btn" data-open="subjects">Add Subject</button>
+      <button class="quick-btn" data-open="progress">Roadmap</button>
+    </div>
+
+   
+  </div>
+</section>
+
+      <section class="page" id="notes">
+        <h1>Notes</h1>
+
+        <div class="card">
+          <h2>Paste Your Notes</h2>
+
+          <textarea
+            id="notesInput"
+            placeholder="Yahan kisi bhi subject ke notes paste karo..."
+          ></textarea>
+
+          <button id="summaryBtn">Summarize Notes</button>
+
+          <div class="summary-box">
+            <h3>AI Summary</h3>
+            <p id="summaryOutput">Summary yahan show hogi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="quiz">
+        <h1>Quiz</h1>
+
+        <div class="card">
+          <h2>Practice Quiz</h2>
+
+          <div class="level-buttons">
+            <button class="level-btn active-level" data-level="easy">Easy</button>
+            <button class="level-btn" data-level="medium">Medium</button>
+            <button class="level-btn" data-level="hard">Hard</button>
+          </div>
+
+          <p class="quiz-info" id="quizInfo">Level: Easy</p>
+          <div class="score-box">
+  <span>Correct: <strong id="correctScore">0</strong></span>
+  <span>Wrong: <strong id="wrongScore">0</strong></span>
+  <span>Attempted: <strong id="attemptedScore">0</strong></span>
+</div>
+
+          <h3 id="quizQuestion">Add subjects first to generate quiz.</h3>
+
+          <div id="quizOptions" class="quiz-options"></div>
+
+          <p id="quizFeedback" class="quiz-feedback"></p>
+
+          <button id="nextQuestionBtn">Next Question</button>
+          <button id="resetScoreBtn">Reset Score</button>
+        </div>
+      </section>
+
+      <section class="page" id="subjects">
+        <h1>Subjects</h1>
+
+        <div class="card">
+          <h2>Add Your Subject</h2>
+
+          <input
+            type="text"
+            id="subjectInput"
+            placeholder="Example: Physics, Python, History"
+          />
+
+          <button id="addSubjectBtn">Add Subject</button>
+
+          <ul id="subjectList" class="subject-list"></ul>
+        </div>
+      </section>
+
+      <section class="page" id="progress">
+  <h1>Progress</h1>
+
+  <div class="card">
+    <h2>Weekly Roadmap</h2>
+    <p id="roadmapInfo">Apne subjects ke basis par weekly plan generate karo.</p>
+
+    <button id="generateRoadmapBtn">Generate Roadmap</button>
+
+    <ol id="roadmapList" class="roadmap-list"></ol>
+  </div>
+</section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
